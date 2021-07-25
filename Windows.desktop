@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=Development;Education;
+Comment[en_US]=Run Windows
+Comment=Run Windows
+Encoding=UTF-8
+Exec=/opt/L-G_helper/looking-glass/client/build/looking-glass-client
+GenericName[en_US]=Windows
+GenericName=Windows
+Icon=/home/td/Pictures/Icons/window_10_icon.png
+MimeType=
+Name=Windows
+Path=
+StartupNotify=true
+StartupWMClass=Windows
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
