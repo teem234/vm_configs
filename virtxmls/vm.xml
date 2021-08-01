@@ -114,11 +114,21 @@
     <controller type="pci" index="7" model="pcie-root-port">
       <model name="pcie-root-port"/>
       <target chassis="7" port="0x8"/>
-      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0" multifunction="on"/>
     </controller>
     <controller type="pci" index="8" model="pcie-to-pci-bridge">
       <model name="pcie-pci-bridge"/>
       <address type="pci" domain="0x0000" bus="0x07" slot="0x00" function="0x0"/>
+    </controller>
+    <controller type="pci" index="9" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="9" port="0x9"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
+    </controller>
+    <controller type="pci" index="10" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="10" port="0xa"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x2"/>
     </controller>
     <controller type="virtio-serial" index="0">
       <address type="pci" domain="0x0000" bus="0x03" slot="0x00" function="0x0"/>
@@ -143,6 +153,12 @@
     </channel>
     <input type="tablet" bus="usb">
       <address type="usb" bus="0" port="1"/>
+    </input>
+    <input type="mouse" bus="virtio">
+      <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
+    </input>
+    <input type="keyboard" bus="virtio">
+      <address type="pci" domain="0x0000" bus="0x0a" slot="0x00" function="0x0"/>
     </input>
     <input type="mouse" bus="ps2"/>
     <input type="keyboard" bus="ps2"/>
@@ -187,5 +203,9 @@
     <qemu:arg value="device.hostdev0.x-pci-sub-vendor-id=0x10de"/>
     <qemu:arg value="-set"/>
     <qemu:arg value="device.hostdev0.x-pci-sub-device-id=0x11A0"/>
+    <qemu:arg value="-object"/>
+    <qemu:arg value="input-linux,id=mouse1,evdev=/dev/input/by-id/usb-Kingsis_Peripherals_ZOWIE_Gaming_mouse-event-mouse"/>
+    <qemu:arg value="-object"/>
+    <qemu:arg value="input-linux,id=kbd1,evdev=/dev/input/by-id/usb-MosArt_USB_Keyboard-event-kbd,grab_all=on,repeat=on"/>
   </qemu:commandline>
 </domain>
