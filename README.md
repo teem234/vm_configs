@@ -1,1 +1,1 @@
-VGPU nvidia libvirt qemu scripts and configs
+vGPU nvidia libvirt qemu scripts and configs
